@@ -3,7 +3,7 @@
 int main(){
     char str[100];
     int count = 0;
-    printf("please enter the string : \n");
+    printf("\n please enter the string :");
     scanf("%s", str);
     // int size = strlen(str);
     for(int i = 0; str[i] != '\0'; i++){
