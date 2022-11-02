@@ -25,13 +25,13 @@ int main()
 	}
 
 	// Function to take matrices data
-        enterData(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
+	enterData(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
 
-        // Function to multiply two matrices.
-        multiplyMatrices(firstMatrix, secondMatrix, mult, rowFirst, columnFirst, rowSecond, columnSecond);
+	// Function to multiply two matrices.
+	multiplyMatrices(firstMatrix, secondMatrix, mult, rowFirst, columnFirst, rowSecond, columnSecond);
 
-        // Function to display resultant matrix after multiplication.
-        display(mult, rowFirst, columnSecond);
+	// Function to display resultant matrix after multiplication.
+	display(mult, rowFirst, columnSecond);
 
 	return 0;
 }
@@ -40,9 +40,9 @@ void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int 
 {
 	int i, j;
 	printf("\nEnter elements of matrix 1:\n");
-	for(i = 0; i < rowFirst; ++i)
+	for (i = 0; i < rowFirst; ++i)
 	{
-		for(j = 0; j < columnFirst; ++j)
+		for (j = 0; j < columnFirst; ++j)
 		{
 			printf("Enter elements a%d%d: ", i + 1, j + 1);
 			scanf("%d", &firstMatrix[i][j]);
@@ -50,9 +50,9 @@ void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int 
 	}
 
 	printf("\nEnter elements of matrix 2:\n");
-	for(i = 0; i < rowSecond; ++i)
+	for (i = 0; i < rowSecond; ++i)
 	{
-		for(j = 0; j < columnSecond; ++j)
+		for (j = 0; j < columnSecond; ++j)
 		{
 			printf("Enter elements b%d%d: ", i + 1, j + 1);
 			scanf("%d", &secondMatrix[i][j]);
@@ -65,20 +65,20 @@ void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int mult[][
 	int i, j, k;
 
 	// Initializing elements of matrix mult to 0.
-	for(i = 0; i < rowFirst; ++i)
+	for (i = 0; i < rowFirst; ++i)
 	{
-		for(j = 0; j < columnSecond; ++j)
+		for (j = 0; j < columnSecond; ++j)
 		{
 			mult[i][j] = 0;
 		}
 	}
 
 	// Multiplying matrix firstMatrix and secondMatrix and storing in array mult.
-	for(i = 0; i < rowFirst; ++i)
+	for (i = 0; i < rowFirst; ++i)
 	{
-		for(j = 0; j < columnSecond; ++j)
+		for (j = 0; j < columnSecond; ++j)
 		{
-			for(k=0; k<columnFirst; ++k)
+			for (k = 0; k < columnFirst; ++k)
 			{
 				mult[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
 			}
@@ -90,12 +90,12 @@ void display(int mult[][10], int rowFirst, int columnSecond)
 {
 	int i, j;
 	printf("\nOutput Matrix:\n");
-	for(i = 0; i < rowFirst; ++i)
+	for (i = 0; i < rowFirst; ++i)
 	{
-		for(j = 0; j < columnSecond; ++j)
+		for (j = 0; j < columnSecond; ++j)
 		{
 			printf("%d  ", mult[i][j]);
-			if(j == columnSecond - 1)
+			if (j == columnSecond - 1)
 				printf("\n\n");
 		}
 	}
